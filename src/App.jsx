@@ -25,14 +25,14 @@ export const App = () => {
     useEffect(() => {
         switch (sortType) {
             case 'ASC':
-                const sortASC = transactions.slice(0);
+                const sortASC = transactions.slice(0, 10);
                 sortASC.sort((a, b) => {
                     return b.amount.value - a.amount.value;
                 });
                 setTransactions(sortASC);
                 break;
             case 'DESC':
-                const sortDESC = transactions.slice(0);
+                const sortDESC = transactions.slice(0, 10);
                 sortDESC.sort((a, b) => {
                     return a.amount.value - b.amount.value;
                 });
