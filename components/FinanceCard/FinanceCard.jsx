@@ -1,3 +1,4 @@
+import React from 'react';
 import './FinanceCard.module.scss';
 export const FinanceCard = ({ transaction }) => {
     return (<div id={transaction.id} className="card_wrapper">
