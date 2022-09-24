@@ -12,7 +12,7 @@ npm install && npm run start
 ##### :wrench: The application should: #####
 
 - [x] Fetch and initialise from the API endpoint (`http://www.mocky.io/v2/5c62e7c33000004a00019b05`)
-- [ ] Filter the transactions to the _10 smallest expenses_ and display them accordingly
+- [x] Filter the transactions to the _10 smallest expenses_ and display them accordingly
 - [x] The description, date and amount should be displayed for each transaction
 
 ###### _Must Include:_ ######
@@ -25,8 +25,8 @@ npm install && npm run start
 - [ ] Don’t use libraries such as axios, lodash, jQuery and Bootstrap
 
 ###### _Optional Parameters_ ######
-- [ ] Unit tests
+- [x] Unit tests
 - [ ] Styled Components
-- [ ] Error and loading state handling
+- [x] Error and loading state handling
 
 ###### _Notes & Feedback_ ######
