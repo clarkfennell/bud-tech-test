@@ -5,8 +5,9 @@ module.exports = {
     main: './src/index.js',
   },
   output: {
-    assetModuleFilename: 'images/[name].[hash][ext][query]',
+    assetModuleFilename: '[name].[hash][ext][query]',
     clean: true,
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -17,7 +18,15 @@ module.exports = {
       {
         test: /\.(svg|png|jpg|gif)$/,
         type: 'asset/resource',
+      },
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
       }
     ]
-  }
+  },
+  resolve: {
+    extensions: ['*', '.js']
+  },
 }
