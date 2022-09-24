@@ -20,7 +20,7 @@ export const FinanceCard = ({ transaction }: Props) => {
       <p>{transaction.date}</p>
       <p>{transaction.description}</p>
       <p>{transaction.category_title}</p>
-      <p>Amount: {(transaction.amount.currency_iso === 'GBP') ? '£' : null} {transaction.amount.value}</p>     
+      <p className={(Math.sign(transaction.amount.value) === -1) ? 'value_negative' : 'value_positive'}>Amount: {(transaction.amount.currency_iso === 'GBP') ? '£' : null} {transaction.amount.value}</p>     
     </div>
   )
 }

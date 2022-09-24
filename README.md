@@ -13,7 +13,7 @@ npm install && npm run dev
 
 - [x] Fetch and initialise from the API endpoint (`http://www.mocky.io/v2/5c62e7c33000004a00019b05`)
 - [ ] Filter the transactions to the _10 smallest expenses_ and display them accordingly
-- [ ] The description, date and amount should be displayed for each transaction
+- [x] The description, date and amount should be displayed for each transaction
 
 ###### _Must Include:_ ######
 - [x] React

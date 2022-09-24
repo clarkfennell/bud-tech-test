@@ -3,12 +3,13 @@ import './../styles/App.module.scss';
 import { FetchData } from'../components/FetchData/FetchData';
 import { FinanceCard } from '../components/FinanceCard/FinanceCard';
 import { SortData } from '../components/SortData/SortData';
-import { DataSortContext } from '../components/SortData/context/SortDataContext';
-import { ContextExclusionPlugin } from 'webpack';
+import { DataSortContext } from './../components/SortData/context/SortDataContext';
+import { ProviderCard } from './../components/ProviderCard/ProviderCard';
+import { BalanceCard } from './../components/BalanceCard/BalanceCard';
 
 export const App = () => {
-  const [balance, setBalance] = useState<[{ amount: number, currency_iso: string }]>([{ amount: 0, currency_iso: '' }])
-  const [provider, setProvider] = useState<[{ title: string, account_number: string, sort_code: string, description: string }]>([{ title: '', account_number: '', sort_code: '', description: '' }]);
+  const [balance, setBalance] = useState<{ amount: number, currency_iso: string }>({ amount: 0, currency_iso: '' })
+  const [provider, setProvider] = useState<{ title: string, account_number: string, sort_code: string, description: string }>({ title: '', account_number: '', sort_code: '', description: '' });
   const [transactions, setTransactions] = useState<[]>([]);
   const [storedTransactions, setStoredTransactions] = useState<[]>([]);
 
@@ -18,7 +19,7 @@ export const App = () => {
     FetchData()
       .then((res) => {
         setBalance(res.balance);
-        setProvider(res);
+        setProvider(res.provider);
         setTransactions(res.transactions);
         setStoredTransactions(res.transactions);
       })
@@ -30,14 +31,14 @@ export const App = () => {
       case 'ASC':
         const sortASC: any = transactions.slice(0);
         sortASC.sort((a: { amount: { value: number } }, b: { amount: { value: number } }) => {
-          return a.amount.value - b.amount.value;
+          return b.amount.value - a.amount.value;
         })
         setTransactions(sortASC);
       break;
       case 'DESC':
         const sortDESC: any = transactions.slice(0);
         sortDESC.sort((a: { amount: { value: number } }, b: { amount: { value: number } }) => {
-          return b.amount.value - a.amount.value;
+          return a.amount.value - b.amount.value;
         })
         setTransactions(sortDESC);
       break;
@@ -52,12 +53,8 @@ export const App = () => {
     <div className="container">
       <h1>Finance App</h1>
       <h2>Your home for financial security</h2>
-      <div className="container_provider">
-
-      </div>
-      <div className="container_balance">
-
-      </div>
+      <BalanceCard balance={balance} />
+      <ProviderCard providerInfo={provider} />
       <SortData />
       <div className="container_cards">
         {transactions.map((transaction, index) => (
