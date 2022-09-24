@@ -20,13 +20,13 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       }
     ]
   },
   resolve: {
-    extensions: ['*', '.js']
+    extensions: ['*', '.js', '.jsx']
   },
 }
