@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: './src/App.js',
+    main: './src/index.js',
   },
   output: {
     assetModuleFilename: 'images/[name].[hash][ext][query]',

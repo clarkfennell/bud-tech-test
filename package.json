@@ -2,7 +2,7 @@
   "name": "bud-tech-test",
   "version": "1.0.0",
   "description": "A frontend technical test for Bud",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
