@@ -5,7 +5,7 @@
 2. cd into the /bud-tech-test directory
 3. Type the following command to install the dependencies and run the project
 ````
-npm install && npm run dev
+npm install && npm run start
 ````
 ## Acceptance Criteria: ##
 
