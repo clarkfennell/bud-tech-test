@@ -45,6 +45,5 @@ npm run test
 - [x] Error and loading state handling
 
 ###### _Notes & Feedback_ ######
-
+- If I had more time I would've tested more of the functionality throughout the application.
 - A fun and challenging task to do. I think the openness towards the design of the whole application is very good. I would however say that, depending on the level this test is for, you might want to throw some dummy data in the api which will cause errors, or issues, so testing can be done to check against it.
-- Don't have any other feedback.
