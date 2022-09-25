@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './../styles/App.module.scss';
+import styles from './../styles/App.module.scss';
 import { FetchData } from'../components/FetchData/FetchData';
 import { FinanceCard } from '../components/FinanceCard/FinanceCard';
 import { SortData } from '../components/SortData/SortData';
@@ -8,6 +8,7 @@ import { ProviderCard } from './../components/ProviderCard/ProviderCard';
 import { BalanceCard } from './../components/BalanceCard/BalanceCard';
 
 export const App = () => {
+/* Setting up the state for the app. */
   const [balance, setBalance] = useState<{ amount: number, currency_iso: string }>({ amount: 0, currency_iso: '' })
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
@@ -15,8 +16,10 @@ export const App = () => {
   const [storedTransactions, setStoredTransactions] = useState<[]>([]);
   const [transactions, setTransactions] = useState<[]>([]);
 
+/* Getting the sortType from the context. */
   const { sortType } = useContext(DataSortContext);
 
+/* This is a useEffect hook that is being used to fetch the data from the API. */
   useEffect(() => {
     FetchData()
       .then((res) => {
@@ -32,6 +35,7 @@ export const App = () => {
       .finally(() => setLoading(false))
   }, [])
 
+/* Sorting the data based on the sortType. */
   useEffect(() => {
     switch (sortType) {
       case 'ASC':
@@ -55,8 +59,14 @@ export const App = () => {
     }
   }, [sortType, storedTransactions]);
 
+/* This is a conditional statement that is checking if the loading state is true. If it is, it will
+return a div with the className of loading and the text of Loading... */
   if (loading) return <div className="loading">Loading...</div>
 
+/* This is a conditional statement that is checking if the error state is greater than 0. If it is, it
+will
+return a div with the className of error and the text of There has been an error loading in your
+data. See below for more information. and the error state. */
   if (error.length > 0) return (
     <div className="error">
       <p>There has been an error loading in your data. See below for more information.</p>
@@ -65,13 +75,15 @@ export const App = () => {
   )
 
   return (
-    <div className="container">
-      <h1>Finance App</h1>
-      <h2>Your home for financial security</h2>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1>Finance App</h1>
+        <h2>Your home for financial security</h2>
+      </div>
       <BalanceCard balance={balance} />
       <ProviderCard providerInfo={provider} />
       <SortData />
-      <div className="container_cards">
+      <div className={styles.cards}>
         {transactions.map((transaction, index) => (
           <FinanceCard key={index} transaction={transaction} />
         ))}

@@ -1,6 +1,7 @@
 import React, { ReactNode, useState } from 'react';
 import { DataSortContext, DataSortType } from './SortDataContext';
 
+/* Defining the props that the component will receive. */
 interface Props {
   children?: ReactNode
 }

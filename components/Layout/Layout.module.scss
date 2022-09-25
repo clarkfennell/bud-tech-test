@@ -1,0 +1,30 @@
+@import './../../styles/variables.scss';
+
+.container {
+  display: block;
+  margin: {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    top: 1rem;
+  }
+  max: {
+    width: none;
+  }
+
+  @media (min-width: $md) {
+    margin: {
+      bottom: 2rem;
+      left: auto;
+      right: auto;
+      top: 2rem;
+    }
+    max: {
+      width: $xl;
+    }
+    padding: {
+      left: 3rem;
+      right: 3rem;
+    }
+  }
+}

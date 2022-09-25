@@ -1,0 +1,107 @@
+@import './../../styles/variables.scss';
+
+.visible,
+.invisible {
+  align-content: center;
+  background: {
+    color: $blue;
+  }
+  border-radius: 1rem;
+  display: flex;
+  flex: {
+    direction: column;
+    wrap: nowrap;
+  }
+  flex: 0 1 100%;
+  justify-content: center;
+  margin: {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    top: 1rem;
+  }
+  max: {
+    width: $xs
+  }
+  min: {
+    height: 10rem;
+  }
+  padding: {
+    bottom: .25rem;
+    left: .25rem;
+    right: .25rem;
+    top: .25rem;
+  }
+
+  @media (min-width: $md) {
+    flex: 0 1 50%;
+  }
+
+  @media (min-width: $lg) {
+    flex: 0 1 25%;
+    max: {
+      width: none;
+    }
+  }
+
+  .positive,
+  .negative {
+    background: {
+      color: $white;
+    }
+    border-radius: .75rem;
+    box-shadow: inset .5rem .5rem .5rem 0px rgba($blue, .25);
+    cursor: pointer;
+    padding: {
+      bottom: .5rem;
+      top: .5rem;
+    }
+    transition: box-shadow ease-in-out .3s, background-color ease-in-out .3s, color .3s ease-in-out;
+
+    &:hover {
+      box-shadow: inset 0rem 0rem 0rem 0px rgba($blue, .75);
+      color: $blue;
+      transition: box-shadow ease-in-out .3s, background-color ease-in-out .3s, color .3s ease-in-out;
+    }
+
+    p {
+      font: {
+        size: .9rem;
+        weight: 600;
+      }
+      margin: {
+        top: .75rem;
+        bottom: .75rem;
+      }
+    }
+  }
+  .positive {
+    color: darken($green, 25%);
+    &:hover {
+      background: {
+        color: lighten($green, 25%)
+      }
+    }
+  }
+
+  .negative {
+    color: $red;
+    &:hover {
+      background: {
+        color: lighten($red, 40%)
+      }
+    }
+  }
+}
+
+.visible {
+  opacity: 1.0;
+  transition: opacity ease-in-out .4s;
+  visibility: visible;
+}
+
+.invisible {
+  opacity: 0;
+  transition: opacity ease-in-out .4s;
+  visibility: hidden;
+}

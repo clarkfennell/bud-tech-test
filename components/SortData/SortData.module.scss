@@ -1,0 +1,100 @@
+@import './../../styles/variables.scss';
+
+.container {
+  display: block;
+  font: {
+    size: 1rem;
+  }
+  padding: {
+    top: 1rem;
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+  }
+
+  p {
+    margin: {
+      bottom: .5rem;
+      left: auto;
+      right: auto;
+      top: .5rem;
+    }
+  }
+
+  .wrapper {
+    align-items: center;
+    display: flex;
+    flex: {
+      direction: column;
+      wrap: nowrap;
+    }
+    justify-content: center;
+    max: {
+      width: $sm;
+    }
+
+    @media (min-width: $md) {
+      flex: {
+        direction: row;
+        wrap: nowrap;
+      }
+    }
+
+    .btn {
+      background: {
+        color: $red;
+      }
+      border-radius: 1rem;
+      border: none;
+      box-shadow: .5rem .5rem 1.5rem 0px rgba($blue,.1), .25rem .25rem .25rem 0px rgba($blue,.1);
+      color: $gray;
+      cursor: pointer;
+      display: block;
+      font-family: $font;
+      height: 3rem;
+      line-height: 3rem;
+      margin: {
+        top: .25rem;
+        bottom: .25rem;
+        left: 0rem;
+        right: 0rem;
+      }
+      outline: none;
+      position: relative;
+      transition: background-color 0.3s ease, color .3s ease-in-out;
+      width: 9rem;
+
+      @media(min-width: $md) {
+        margin: {
+          left: .5rem;
+        right: .5rem;
+        }
+      }
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: "";
+        right: 0;
+        bottom: 0;
+        background: {
+          color: $red;
+        }
+        box-shadow:
+        -7px -7px 20px 0px rgba(255,255,255,.9),
+        -4px -4px 5px 0px rgba(255,255,255,.9),
+        7px 7px 20px 0px rgba(0,0,0,.2),
+        4px 4px 5px 0px rgba(0,0,0,.3);
+        transition: background-color .3s ease-in-out;
+      }
+
+      &:hover{
+        background: {
+          color: $gray;
+        }
+        color: $red; 
+        transition: background-color .3s ease-in-out, color .3s ease-in-out;
+      }
+    }
+  }
+}

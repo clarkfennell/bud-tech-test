@@ -1,0 +1,40 @@
+@import './../../styles/variables.scss';
+
+.container {
+  color: $blue;
+  border-radius: 1rem;
+  display: flex;
+  flex: {
+    direction: column;
+    wrap: nowrap;
+  }
+  padding: {
+    top: .5rem;
+    bottom:.5rem;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  h4, h5 {
+    font: {
+      size: .7rem;
+      weight: 700;
+    }
+  }
+
+  p {
+    font: {
+      size: .8rem;
+      weight: 700;
+    }
+    margin: 0;
+  }
+
+  @media (min-width: $md) {
+    h4, h5, p {
+      font: {
+        size: 1rem;
+      }
+    }
+  }
+}
