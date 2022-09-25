@@ -1,6 +1,6 @@
 # Frontend Test for Bud
 
-Go here to check out the app in working production: `https://bud-tech-test-mzwi.vercel.app/`
+[Click here to check out the app in working production](`https://bud-tech-test-mzwi.vercel.app/`)
 
 ## SetUp Instructions
 1. Clone this repository
