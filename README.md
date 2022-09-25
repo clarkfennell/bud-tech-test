@@ -6,6 +6,19 @@
 3. Type the following command to install the dependencies and run the project
 ````
 npm install && npm run start
+
+````
+
+To build the application, run the following command
+````
+npm run build
+
+````
+
+To run the test files in the application, run the following command
+````
+npm run test
+
 ````
 ## Acceptance Criteria: ##
 
@@ -17,16 +30,19 @@ npm install && npm run start
 
 ###### _Must Include:_ ######
 - [x] React
-- [ ] Bundle assets with a tool of choice
-- [ ] Accessibility support
+- [x] Bundle assets with a tool of choice
+- [x] Accessibility support
 
 ###### _Do Not_ ######
 - [x] Don’t use Create React App or any other tools that remove the need for set up
-- [ ] Don’t use libraries such as axios, lodash, jQuery and Bootstrap
+- [x] Don’t use libraries such as axios, lodash, jQuery and Bootstrap
 
 ###### _Optional Parameters_ ######
 - [x] Unit tests
-- [ ] Styled Components
+- [x] Styled Components
 - [x] Error and loading state handling
 
 ###### _Notes & Feedback_ ######
+
+- A fun and challenging task to do. I think the openness towards the design of the whole application is very good. I would however say that, depending on the level this test is for, you might want to throw some dummy data in the api which will cause errors, or issues, so testing can be done to check against it.
+- Don't have any other feedback.
